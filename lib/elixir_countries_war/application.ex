@@ -14,8 +14,10 @@ defmodule ElixirCountriesWar.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: ElixirCountriesWar.PubSub},
       # Start the Endpoint (http/https)
-      ElixirCountriesWarWeb.Endpoint
+      ElixirCountriesWarWeb.Endpoint,
       # Start a worker by calling: ElixirCountriesWar.Worker.start_link(arg)
+      ElixirCountriesWar.Country.Supervisor,
+      ElixirCountriesWar.Citizen.Supervisor
       # {ElixirCountriesWar.Worker, arg}
     ]
 
